@@ -1,0 +1,31 @@
+.nav-custom {
+    transition: all 300ms;
+}
+
+.nav-transparent {
+    padding: 1.5rem;
+    background-color: #000;
+    .nav-link, .navbar-brand {
+        color: #fff!important;
+    }
+    .dropdown-item {
+        color: #000!important;
+    }
+}
+
+.nav-white {
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 33, 33, 0.46);
+    .nav-link, .navbar-brand, .dropdown-item {
+        color: rgba(0,0,0,.5)!important;
+        &:hover {
+            color: rgba(0,0,0,.9)!important;
+        }
+    }
+}
+
+.logo {
+    max-width: 40px;
+    height: 40px;
+}
