@@ -2,6 +2,7 @@ import Navbar from '../../components/navbar/index'
 
 export default function Post({ post }) {
     return(
+       console.log(post),
         <React.Fragment>
             <Navbar />
             <h1>Post {post.title}</h1>

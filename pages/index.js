@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Navbar from '../components/navbar/index'
-import 'bootstrap/scss/bootstrap.scss'
 
 export default function Home({ posts }) {
   return (
