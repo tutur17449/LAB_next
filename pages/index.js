@@ -22,13 +22,13 @@ export default function Home({ posts }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
   const posts = await res.json()
 
   return {
     props: {
-      posts,
-    },
+      posts
+    }
   }
 }
