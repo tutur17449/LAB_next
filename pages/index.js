@@ -2,9 +2,10 @@ import Link from 'next/link'
 import Navbar from '../components/navbar/index'
 
 export default function Home({ posts }) {
+
   return (
     <React.Fragment>
-      <Navbar 
+      <Navbar
         changeColorOnScroll={100}
       />
       <h1>Liste des posts</h1>
@@ -21,7 +22,7 @@ export default function Home({ posts }) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
   const posts = await res.json()
 
