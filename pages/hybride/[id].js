@@ -20,7 +20,7 @@ export default function Post({ post }) {
 
   const onHandleClick = async () => {
     mutate(`http://localhost:3333/comments?postId=${post.id}`, async () => {
-      const post = await fetcher('http://localhost:3333/comments', {
+      const newPost = await fetcher('http://localhost:3333/comments', {
         method: 'POST',
         headers: {
           "Content-type": "application/json"
@@ -29,7 +29,7 @@ export default function Post({ post }) {
           body: "New comment ...",
           email: "fake@email.fr",
           name: "New comment",
-          postId: 1
+          postId: post.id
         })
       })
     })
