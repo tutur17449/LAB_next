@@ -1,4 +1,12 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "username": "test",
+      "email": "fake@test.fr",
+      "password": "test"
+    }
+  ],
   "posts": [
     {
       "userId": 1,
