@@ -7,6 +7,10 @@ First, install dependencies:
 ```bash
 npm i
 ```
+Install json server
+```bash
+npm i -g json-server
+```
 
 Run the database:
 ```bash
