@@ -1,5 +1,6 @@
 const jsonServer = require('json-server')
 const path = require('path')
+const cors = require('cors')
 const server = jsonServer.create()
 const router = jsonServer.router(path.join(__dirname, 'database/db.json'))
 const bodyParser = require('body-parser')
@@ -8,8 +9,17 @@ const jwt = require('jsonwebtoken')
 const db = router.db
 const port = 3333
 
+let corsOptions = function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
+    res.header('Access-Control-Allow-Headers', 'Content-Type')
+    res.header('Access-Control-Allow-Credentials', true)
+    next()
+}
+
 class ServerClass {
     init() {
+        server.use(corsOptions)
         server.use(bodyParser.json({ limit: '10mb' }))
         server.use(bodyParser.urlencoded({ extended: true }))
         server.use(cookieParser('put_key_here'))
@@ -18,6 +28,7 @@ class ServerClass {
 
     AppRoutes() {
         server.post('/login', (req, res) => {
+            console.log(req.body)
             if(typeof req.body === "undefined" || !req.body){
                 res.status(500).json({
                     ok : false,

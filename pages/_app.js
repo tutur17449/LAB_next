@@ -1,7 +1,7 @@
 import 'bootstrap/scss/bootstrap.scss'
 import Router from 'next/router'
 import Loader from '../components/loader/index'
-import {AuthContext} from '../global/authContextProvider'
+import {AuthProvider} from '../global/authContextProvider'
 
 export default function MyApp({ Component, pageProps }) {
 
@@ -23,9 +23,9 @@ export default function MyApp({ Component, pageProps }) {
         isLoading ? (
             <Loader />
         ) : (
-          <AuthContext.Provider>
+          <AuthProvider>
             <Component {...pageProps} />
-          </AuthContext.Provider>
+          </AuthProvider>
         )
     )
 }
